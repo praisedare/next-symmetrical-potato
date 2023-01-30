@@ -5,7 +5,7 @@ export const getStaticProps = async () => {
 	const users = await res.json();
 
 	return {
-		props: { users },
+		props: { users: users.slice(0, 3) },
 	};
 };
 
