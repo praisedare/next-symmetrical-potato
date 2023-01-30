@@ -1,0 +1,94 @@
+{
+  "products": [
+    {
+      "name": "Luxurious Frozen Bacon",
+      "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+      "category": "industrial",
+      "price": "580.00"
+    },
+    {
+      "name": "Sleek Bronze Salad",
+      "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+      "category": "shoes",
+      "price": "396.00"
+    },
+    {
+      "name": "Rustic Frozen Salad",
+      "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+      "category": "shoes",
+      "price": "34.00"
+    },
+    {
+      "name": "Incredible Rubber Pants",
+      "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+      "category": "kids",
+      "price": "484.00"
+    },
+    {
+      "name": "Bespoke Metal Pants",
+      "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+      "category": "jewelery",
+      "price": "53.00"
+    },
+    {
+      "name": "Licensed Rubber Keyboard",
+      "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+      "category": "computers",
+      "price": "374.00"
+    },
+    {
+      "name": "Rustic Granite Shirt",
+      "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+      "category": "movies",
+      "price": "352.00"
+    },
+    {
+      "name": "Modern Frozen Shoes",
+      "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+      "category": "computers",
+      "price": "938.00"
+    },
+    {
+      "name": "Recycled Rubber Gloves",
+      "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+      "category": "tools",
+      "price": "527.00"
+    },
+    {
+      "name": "Recycled Frozen Mouse",
+      "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+      "category": "tools",
+      "price": "504.00"
+    },
+    {
+      "name": "Handcrafted Rubber Keyboard",
+      "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+      "category": "kids",
+      "price": "7.00"
+    },
+    {
+      "name": "Gorgeous Wooden Fish",
+      "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+      "category": "books",
+      "price": "896.00"
+    },
+    {
+      "name": "Incredible Metal Towels",
+      "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+      "category": "garden",
+      "price": "127.00"
+    },
+    {
+      "name": "Sleek Frozen Gloves",
+      "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+      "category": "garden",
+      "price": "2.00"
+    },
+    {
+      "name": "Tasty Granite Chair",
+      "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+      "category": "baby",
+      "price": "646.00"
+    }
+  ]
+}
