@@ -6,6 +6,7 @@ export default function ProductDetailsPage({ product, params }) {
 }
 
 export function getServerSideProps(context) {
+	const {params} = context
 	const product = {id: params.productId};
 
 	return {
