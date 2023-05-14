@@ -1,64 +1,64 @@
 import Link from "next/link"
 import {useEffect, useState} from "react"
-import { useRouter } from "next/router"
-
-async function fetchFilteredProducts(category) {
-	const queryString = category ? 'category='+category : ''
-	const response = await fetch(`http://localhost:3399/products?${queryString}`)
-	const products = await response.json()
-	return products;
-}
+import useSWR from 'swr'
+import {useForm} from 'react-hook-form'
 
 export default function ProductsPage({ products: initialProducts }) {
-	const [filter, setFilter] = useState()
-	const [isFirstFetch, setIsFirstFetch] = useState(true)
-	const [products, setProducts] = useState(initialProducts)
-	const [isLoading, setIsLoading] = useState(false)
-	const router = useRouter()
+    const {register, watch} = useForm()
+    const filter = watch('filter')
+    const [products, setProducts] = useState(initialProducts)
+    const {data, error} = useSWR(
+        () => {
+            const url = 'http://localhost:3399/products'
+            let f = !filter
+                ? url
+                : url + `?category=${filter}`
+            return f
+        },
+        async (url) => {
+            const response = await fetch(url)
+            return await response.json()
+        }
+    )
 
-	useEffect(() => {
-		if (! filter && isFirstFetch)
-			return
-
-		setIsFirstFetch(false)
-
-		async function fetchProducts() {
-			setProducts(await fetchFilteredProducts(filter))
-
-			router.push(`/${ router.pathname }?category=${ filter }`, null, {shallow: true})
-		}
-
-		fetchProducts()
-	}, [filter])
-
-	const filters = ['tools', 'shoes'];
+    useEffect(() => {
+        setProducts(data)
+    }, [data])
 
 	return <>
 		<h1>Products</h1>
 
 		<div>
-			Filters: 
-			<ul>{filters.map(filter => (
-				<button onClick={() => setFilter(filter)}>
-					{filter}
-				</button>
-			))}</ul>
+            <label for="filter">Filtr</label>
+            <select {...register(`filter`)}>
+                <option value="">None</option>
+                {'tools kids movies jewelery'.split` `.map(cat => (
+                    <option value={cat} selected={filter == cat}>{cat}</option>
+                ))}
+            </select>
+        <p>filter: {filter}</p>
 		</div>
 
-		{isLoading ? (
+        {error ? (
+            <p>Error</p>
+        ) : !products ? (
 			<p>Loading...</p>
-		) : (<ul>
-			{products.map(product => (
+        ) : (
+            <ul>{
+                products.map(product => (
 				<li key={product.id}><Link href={`/products/${product.id}`}>
-					{product.name} - ${product.price} [<i>{product.category}</i>]
+					{product.name} - ${product.price}
 				</Link></li>
-			))}
-		</ul>)}
+                ))}
+            </ul>
+        )}
 	</>
 }
 
-export async function getServerSideProps({ query }) {
-	const products = await fetchFilteredProducts(query.category)
+export async function getServerSideProps() {
+	const response = await fetch('http://localhost:3399/products')
+	const products = await response.json()
+    // console.log(products)
 
 	return {
 		props: {
